@@ -1,84 +1,215 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Login Page</title>
-    <style>
-      /* center the form on the page */
-      form {
-        margin: auto;
-        width: 30%;
-        height:350px;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        margin-top: 150px;
-      }
 
-      #log{
-        text-align: center;
-        color: rgb(212, 11, 175);
-      }
-      input[type=text], input[type=password] {
-        width: 100%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-      }
+<head>
+  <title>Login Page</title>
+  <style>
+    body {
+    margin: 0px;
+    padding: 0px;
+}
 
-      /* style the submit button */
-      input[type=submit] {
-        background-color:rgb(213, 9, 169);
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
+#banner {
+    margin: auto;
+    width: 85%
+}
 
-      /* style the cancel button */
-      input[type=button] {
-        background-color:rgb(213, 9, 169);
-        color: white;
-        padding: 14px 20px;
-        margin: 8px 0;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-      }
+#banner img {
+    width: 100%;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
-      /* add a hover effect for the buttons */
-      input[type=submit]:hover, input[type=button]:hover {
-        background-color: #45a049;
-      }
-      a{
-        text-decoration: none;
-        color: black;
-      }
-    </style>
-  </head>
-  <body>
+.nav {
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    height: 70px;
+    background-color: hsl(0, 0%, 94%);
+    justify-content: space-between;
+
+}
+
+.nav>div {
+    width: 150px;
+    margin-left: 80px;
+}
+
+.nav>div>img {
+    align-items: center;
+    width: 100%;
+
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+
+}
+
+#offer>p {
+
+    width: 350px;
+
+}
+
+.nav> :nth-child(4) {
+
+    text-align: center;
+    display: flex;
+    width: 400px;
+    padding-left: 400px;
+
+    margin: auto;
+
+
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+#lnk a {
+    display: inline;
+    margin: auto;
+    padding-right: 100px;
+
+    justify-content: space-between;
+}
+    /* center the form on the page */
+    form {
+      margin: auto;
+      width: 30%;
+      height: 350px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-top: 150px;
+    }
+
+    #log {
+      text-align: center;
+      color: rgb(212, 11, 175);
+    }
+
+    input[type=text],
+    input[type=password] {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+
+    /* style the submit button */
+    input[type=submit] {
+      background-color: rgb(213, 9, 169);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* style the cancel button */
+    input[type=button] {
+      background-color: rgb(213, 9, 169);
+      color: white;
+      padding: 14px 20px;
+      margin: 8px 0;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    /* add a hover effect for the buttons */
+    input[type=submit]:hover,
+    input[type=button]:hover {
+      background-color: #45a049;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div>
+        <img src="https://cdn02.nnnow.com/web-images/master/navtree_metaData/59b2425ae4b0d70964ee66e0/1505806763887/12NNNOWLOGODESKTOP.png" alt="">
+    </div>
+    <div id="location">
+        <a href=""> <i class="fas fa-map-marker-alt"></i>Store Locator</a>
+    </div>
+    <div id="offer">
+        
+        <p>Get 10% OFF on your first purchase.Use Code <br>BEAUTY10</p>
+        
+    </div>
+    <div id="lnk">
+    <a href="">Get APP</a>
+    <a href="">Track Order</a>
+    <a href="">Loyalty</a>
+    </div>
     
-    <form action="/login" method="post">
-        <h1 id="log">MIKKU SEPHORA</h1>
-        <h2>Login</h2>
-      
-      <label for="username"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="username" required>
+    <div>
+        
+    </div>
+   
+    
 
-      <label for="password"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="password" required>
+</div>
 
-      <div>
-        <input type="submit" value="Login">
-        <input type="button" value="Cancel">
-      </div>
-      <div>
-        <a href="">Forgot password</a>
-      </div>
-    </form>
-  </body>
+
+  <form id="loginForm" action="/login" method="post" onsubmit="submitForm(event)">
+    <h1 id="log">MIKKU SEPHORA</h1>
+    <h2>Login</h2>
+
+    <label for="username"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="username" id="username" required>
+
+    <label for="password"><b>Password</b></label>
+    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+    <div>
+      <input type="submit" value="Login">
+      <input type="button" value="Cancel" onclick="cancelForm()">
+    </div>
+    <div>
+      <a href="#">Forgot password</a>
+    </div>
+  </form>
+
+  <script>
+    function cancelForm() {
+      // Reset the form
+      document.getElementById("loginForm").reset();
+    }
+
+    function submitForm(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Get the form values
+      const username = document.getElementById("username").value;
+      const password = document.getElementById("password").value;
+
+      // You can add your logic for form submission here
+      // For now, let's just log a message and show an alert
+      console.log("Form submitted with values: ", { username, password });
+
+      // Show an alert
+      alert("Login successfully!");
+
+      // Reset the form
+      document.getElementById("loginForm").reset();
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+
 </html>
